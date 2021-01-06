@@ -1,4 +1,4 @@
-# Vagrant AWS Route53
+# Vagrant AWS Route53 Advoc8
 
 A Vagrant plugin assigns the public IP of the instance which vagrant-aws provider created to a specific Route 53 record set.
 
@@ -30,6 +30,8 @@ $ vagrant plugin install vagrant-aws-route53-rimian
 
 ## Config
 
+Recommend putting your config in ENV or something...
+
 ```ruby
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box       = 'dummy'
@@ -42,7 +44,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     aws.region                    = 'ap-northeast-1'
     aws.instance_type             = 't2.medium'
 
-    override.route53.hosted_zone_id = 'Z1JUXXXXXXXXXX'
+    override.route53.hosted_zone_id = ENV['AWS_KEYPAIR_NAME']'Z1JUXXXXXXXXXX'
     override.route53.record_set     = %w(test.oogatta.com. A)
   end
 
