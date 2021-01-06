@@ -1,31 +1,32 @@
-vagrant-aws-route53
+vagrant-aws-route53-rimian
 ===============
 
-A Vagrant plugin assigns the public IP of the instance which vagrant-aws provider created to a specific Route 53 record set. 
+A Vagrant plugin assigns the public IP of the instance which vagrant-aws provider created to a specific Route 53 record set.
+
+Uses AWS-SDK v3
 
 ### Assigns the IP when
 
-* initial ```vagrant up```
-* ```vagrant up``` the halted instance. 
+* ```vagrant up``` initial or the halted instance.
 
 ### Assigns 0.0.0.0 when
 
 * ```vagrant halt```
 * ```vagrant destroy```
 
-### does not
+### Does not
 
 * creates another hosted zone or record set.
 * destroys hosted zone or record set.
 
 ## Prerequisite
 
-* vagrant-aws
+* vagrant-aws > 0.7.2
 
 ## Install
 
 ```zsh
-$ vagrant install vagrant-aws-route53
+$ vagrant plugin install vagrant-aws-route53-rimian
 ```
 
 ## Config
