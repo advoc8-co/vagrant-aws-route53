@@ -7,7 +7,7 @@ end
 group :plugins do
   gem 'awesome_print'
   gem 'vagrant-aws', '0.7.2'
-  gem 'vagrant-aws-route53-rimian', path: '.'
+  gem 'vagrant-aws-route53-advoc8', path: '.'
 end
 
 gem 'aws-sdk', '~> 3'
