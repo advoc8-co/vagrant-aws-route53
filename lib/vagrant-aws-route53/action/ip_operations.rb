@@ -1,4 +1,4 @@
-require 'aws-sdk-v1'
+require 'aws-sdk-v3'
 
 module VagrantPlugins
   module AwsRoute53
@@ -20,12 +20,12 @@ module VagrantPlugins
         end
 
         def set(options)
-          ::AWS.config(access_key_id: options[:access_key_id], secret_access_key: options[:secret_access_key], region: options[:region])
+          ::Aws.config(access_key_id: options[:access_key_id], secret_access_key: options[:secret_access_key], region: options[:region])
 
-          ec2 = ::AWS.ec2
+          ec2 = ::Aws.ec2
           public_ip = options[:public_ip] || ec2.instances[options[:instance_id]].public_ip_address
 
-          record_sets = ::AWS::Route53::HostedZone.new(options[:hosted_zone_id]).rrsets
+          record_sets = ::Aws::Route53::HostedZone.new(options[:hosted_zone_id]).rrsets
           record_set  = record_sets[*options[:record_set]]
           record_set.resource_records = [{ value: public_ip }]
           record_set.update

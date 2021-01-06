@@ -10,4 +10,4 @@ group :plugins do
   gem 'vagrant-aws-route53-rimian', path: '.'
 end
 
-gem 'aws-sdk'
+gem 'aws-sdk', '~> 3'
