@@ -1,4 +1,3 @@
-require 'aws-sdk-v1'
 require_relative 'ip_operations'
 
 module VagrantPlugins

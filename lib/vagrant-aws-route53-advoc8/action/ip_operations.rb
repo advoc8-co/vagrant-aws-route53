@@ -1,4 +1,4 @@
-require 'aws-sdk-v3'
+require 'aws-sdk'
 
 module VagrantPlugins
   module AwsRoute53Advoc8
