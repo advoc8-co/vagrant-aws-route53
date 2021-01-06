@@ -1,7 +1,7 @@
 require 'vagrant'
 
 module VagrantPlugins
-  module AwsRoute53
+  module AwsRoute53Advoc8
     class Config < Vagrant.plugin('2', :config)
       attr_accessor :hosted_zone_id
       attr_accessor :record_set
@@ -14,7 +14,7 @@ module VagrantPlugins
       def validate(machine)
         errors = _detected_errors
 
-        { 'AwsRoute53' => errors }
+        { 'AwsRoute53Advoc8' => errors }
       end
     end
   end

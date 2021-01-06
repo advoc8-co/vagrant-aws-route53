@@ -1,9 +1,9 @@
 $:.unshift File.expand_path('../lib', __FILE__)
-require 'vagrant-aws-route53/version'
+require 'vagrant-aws-route53-advoc8/version'
 
 Gem::Specification.new do |s|
   s.name          = 'vagrant-aws-route53-advoc8'
-  s.version       = VagrantPlugins::AwsRoute53::VERSION
+  s.version       = VagrantPlugins::AwsRoute53Advoc8::VERSION
   s.platform      = Gem::Platform::RUBY
   s.license       = 'MIT'
   s.authors       = ['Naohiro Oogatta', 'Rimian Perkins']
