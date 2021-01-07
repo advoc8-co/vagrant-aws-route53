@@ -20,7 +20,11 @@ module VagrantPlugins
         end
 
         def set(options)
-          ::Aws.config(access_key_id: options[:access_key_id], secret_access_key: options[:secret_access_key], region: options[:region])
+          ::Aws.config.update(
+            access_key_id: options[:access_key_id],
+            secret_access_key: options[:secret_access_key],
+            region: options[:region]
+          )
 
           ec2 = ::Aws.ec2
           public_ip = options[:public_ip] || ec2.instances[options[:instance_id]].public_ip_address
