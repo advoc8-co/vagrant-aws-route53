@@ -26,8 +26,12 @@ module VagrantPlugins
             region: options[:region]
           )
 
-          ec2 = ::Aws.ec2
-          public_ip = options[:public_ip] || ec2.instances[options[:instance_id]].public_ip_address
+          public_ip = if !options[:public_ip].nil?
+            ec2_instance = ::Aws::EC2::Instance.new options[:instance_id]
+            ec2_instance.public_ip_address
+          else
+            options[:public_ip]
+          end
 
           record_sets = ::Aws::Route53::HostedZone.new(options[:hosted_zone_id]).rrsets
           record_set  = record_sets[*options[:record_set]]
