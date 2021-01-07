@@ -44,8 +44,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     aws.region                    = 'ap-northeast-1'
     aws.instance_type             = 't2.medium'
 
-    override.route53.hosted_zone_id = ENV['AWS_KEYPAIR_NAME']'Z1JUXXXXXXXXXX'
-    override.route53.record_set     = %w(test.oogatta.com. A)
+    override.route53.hosted_zone_id = ENV['AWS_KEYPAIR_NAME']
+    override.route53.record_set     = [ENV['AWS_ROUTE53_RECORD_SET'], 'A']
   end
 
 end
